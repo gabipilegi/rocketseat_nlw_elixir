@@ -18,7 +18,7 @@ defmodule Wabanex.Users.Get do
   defp get({:ok, id}) do
     case Repo.get(User, id) do
       nil -> {:error, "User not found"}
-      user -> user
+      user -> {:ok, user}
     end
   end
 end
